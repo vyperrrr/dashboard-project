@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *
 {
     margin: 0;
@@ -5,7 +7,8 @@
     box-sizing: border-box;
 }
 
-:root{
+:root
+{
     --charcoal: hsla(197, 37%, 24%, 1);
     --persian-green: hsla(173, 58%, 39%, 1);
     --maize-crayola: hsla(43, 74%, 66%, 1);
@@ -13,9 +16,11 @@
     --burnt-sienna: hsla(12, 76%, 61%, 1);
 }
 
-body{
+body
+{
+    font-family: 'Roboto';
     display: grid;
-    grid-template-columns: clamp(220px, 25%, 280px) 1fr;
+    grid-template-columns: clamp(240px, 25%, 280px) 1fr;
     grid-template-rows: 1fr 5fr;
     grid-auto-rows: 1fr;
     grid-template-areas: 
@@ -26,16 +31,62 @@ body{
     height: 100%;
 }
 
-.sidebar{
+.sidebar
+{
     grid-area: sidebar;
     background-color: var(--charcoal);
+    display: flex;
+    flex-direction: column;
 }
 
-.nav{
+.sidebar > .sidebar-nav, .sidebar-fill-bottom
+{
+    margin-top: 3rem;
+}
+
+.sidebar > .logo-container
+{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+}
+
+.sidebar > .logo-container > h1
+{
+    font-size: 2rem;
+}
+
+.sidebar > .logo-container > img
+{
+    max-width: 46px;
+    max-height: 46px;  
+}
+
+.sidebar > * > ul > li
+{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0.5rem 2rem;
+}
+
+.sidebar > * > ul > li > img
+{
+    max-width: 24px;
+    max-height: 24px;  
+    margin-right: 1rem;
+}
+
+.nav
+{
     grid-area: header;
     background-color: var(--persian-green);
 }
 
-.content{
+.content
+{
     grid-area: main;
 }
