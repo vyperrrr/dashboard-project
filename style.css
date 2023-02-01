@@ -21,7 +21,7 @@ body
     font-family: 'Roboto';
     display: grid;
     grid-template-columns: clamp(240px, 25%, 280px) 1fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: clamp(180px, 15%, 220px) 1fr;
     grid-auto-rows: 1fr;
     grid-template-areas: 
         "sidebar header"
@@ -89,4 +89,63 @@ body
 .content
 {
     grid-area: main;
+}
+
+.nav
+{
+    padding: 1rem 2rem;
+}
+
+.nav
+{
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    grid-template-areas: 
+        "search-bar upper-profile"
+        "lower-profile operations"
+    ;
+}
+
+.nav > .search-bar
+{
+    grid-area: search-bar;
+}
+
+.nav > .upper-profile
+{
+    grid-area: upper-profile;
+}
+
+.nav > .lower-profile
+{
+    grid-area: lower-profile;
+}
+
+.nav > .operations
+{
+    grid-area: operations;
+}
+
+.search-area > .search-bar
+{
+    display: flex;
+    align-items: center;
+}
+
+.search-bar > img
+{
+    max-width: 28px;
+    max-height: 28px;
+    margin-right: 0.55rem;
+}
+
+.search-bar > input
+{
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 30px;
+    border-radius: 25px;
+    padding: 0 1.33rem;
+    background-color: rgba(245, 245, 245, 0.9);
 }
