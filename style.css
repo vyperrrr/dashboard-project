@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root
@@ -14,6 +16,8 @@
     --maize-crayola: hsla(43, 74%, 66%, 1);
     --sandy-brown: hsla(27, 87%, 67%, 1);
     --burnt-sienna: hsla(12, 76%, 61%, 1);
+    --profile-icon-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    --shadow-sm: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 body
@@ -94,12 +98,14 @@ body
 .nav
 {
     padding: 1rem 2rem;
+    box-shadow: var(--shadow-sm);
 }
 
 .nav
 {
     display: grid;
     grid-template-columns: 1fr 0.8fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
         "search-bar upper-profile"
         "lower-profile operations"
@@ -126,26 +132,101 @@ body
     grid-area: operations;
 }
 
-.search-area > .search-bar
+.search-area
 {
     display: flex;
     align-items: center;
 }
 
-.search-bar > img
+.search-area > img
 {
     max-width: 28px;
     max-height: 28px;
     margin-right: 0.55rem;
 }
 
-.search-bar > input
+.search-area > input
 {
     border: 0;
     outline: 0;
     width: 100%;
-    height: 30px;
-    border-radius: 25px;
+    height: 35px;
+    border-radius: 1.33rem;
     padding: 0 1.33rem;
     background-color: rgba(245, 245, 245, 0.9);
+    box-shadow: var(--shadow-sm);
+}
+
+.upper-profile
+{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.upper-profile > img  
+{
+    max-width: 28px;
+    max-height: 28px;
+}
+
+.upper-profile > *
+{
+    margin-right: 2rem;
+}
+
+.upper-profile > .profile-icon
+{
+    max-width: 48px;
+    max-height: 48px;
+    clip-path: var(--profile-icon-clip-path);
+    
+}
+
+.lower-profile
+{
+    display: flex;
+    align-items: center;
+}
+
+.lower-profile > .profile-icon 
+{
+    max-width: 72px;
+    max-height: 72px;
+    clip-path: var(--profile-icon-clip-path);
+    margin-right: 1rem;
+}
+
+.operations
+{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.operations > button
+{
+    padding: 0.8rem 1.8rem;
+    border-radius: 1.33rem;
+    margin-right: 1rem;
+    outline: none;
+    border: none;
+    background-color: rgba(245, 245, 245, 0.9);
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+}
+
+.lower-profile > p, .upper-profile > p
+{
+    font-weight: 700;
+}
+
+.lower-profile > p
+{
+    font-size: 1.3rem;
+}
+
+.lower-profile > p > span
+{
+    font-size: small;
 }
