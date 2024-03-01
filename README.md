@@ -1,2 +1,4 @@
 # dashboard-project
- Admin Dashboard
+Static admin dashboard
+made with pure css and html
+to hone grid skills
